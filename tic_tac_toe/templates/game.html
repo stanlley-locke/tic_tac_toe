@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game - Tic Tac Toe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+</head>
+<body data-game-id="{{ game_id }}" data-symbol="{{ symbol }}" data-username="{{ user.username }}">
+  <div class="container">
+    <header>
+      <h1>Game Room: {{ game_id }}</h1>
+      <nav>
+        <a href="{{ url_for('dashboard') }}" class="btn">Back to Dashboard</a>
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <!-- Countdown display before game starts -->
+      <div id="countdown" class="countdown"></div>
+
+      <!-- Game board -->
+      <section id="game-board">
+        {% for i in range(9) %}
+          <div class="cell" data-cell="{{ i }}"></div>
+        {% endfor %}
+      </section>
+      <p id="game-status">Your symbol: {{ symbol }}</p>
+
+      <!-- Turn Timer Display -->
+      <div id="turn-timer" class="turn-timer"></div>
+
+      <!-- Chat Section -->
+      <section id="chat-section">
+        <div id="chat-box"></div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+          <button type="submit" id="send-chat" class="btn">Send</button>
+        </form>
+      </section>
+
+      <!-- Result Popup -->
+      <div id="result-popup" class="popup">
+        <div class="popup-content">
+          <h3 id="result-message"></h3>
+          <button id="new-game" class="popup-btn">New Game</button>
+          <button id="leave-room" class="popup-btn">Leave Room</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

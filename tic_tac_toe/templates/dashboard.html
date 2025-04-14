@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Tic Tac Toe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body data-username="{{ user.username }}">
+  <div class="container">
+    <header>
+      <h1>Dashboard</h1>
+      <nav>
+        <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <h2>Welcome, {{ user.username }}!</h2>
+      <h3>Online Players</h3>
+      <ul id="users-list">
+        <!-- Online users will be dynamically loaded -->
+      </ul>
+    </main>
+  </div>
+
+  <!-- Challenge Popup -->
+  <div id="challenge-popup" class="popup">
+    <div class="popup-content">
+      <h3 id="challenge-message"></h3>
+      <button id="accept-challenge" class="popup-btn">Accept</button>
+      <button id="reject-challenge" class="popup-btn">Reject</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

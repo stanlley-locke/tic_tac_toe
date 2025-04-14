@@ -1,0 +1,141 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid #00f0ff;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #00f0ff;
+  text-shadow: 0 0 5px #00f0ff;
+}
+
+header nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #00f0ff;
+}
+
+h2, h3 {
+  margin: 1rem 0;
+  color: #00f0ff;
+}
+
+#users-list {
+  list-style: none;
+  padding: 0;
+}
+
+#users-list li {
+  background: rgba(0, 0, 0, 0.8);
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+#users-list li:hover {
+  background: rgba(0, 240, 255, 0.2);
+}
+
+.send-challenge-btn {
+  padding: 0.5rem 1rem;
+  background-color: #2ed573;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.send-challenge-btn:hover {
+  background-color: #20bf6b;
+}
+
+/* Challenge Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.popup-content h3 {
+  color: #00f0ff;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease;
+}
+
+.popup-btn {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.popup-btn:hover {
+  transform: scale(1.1);
+}
+
+#accept-challenge {
+  background-color: #28a745;
+  color: #fff;
+}
+
+#reject-challenge {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}

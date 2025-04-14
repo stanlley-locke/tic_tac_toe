@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard - Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/leaderboard.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Leaderboard</h1>
+      <nav>
+        <a href="{{ url_for('dashboard') }}" class="btn">Back to Dashboard</a>
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <section class="leaderboard-section">
+        <h2>Daily Leaderboard</h2>
+        <ul>
+          {% for player, points in daily %}
+            <li>{{ player }} - {{ points }} points</li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="leaderboard-section">
+        <h2>Weekly Leaderboard</h2>
+        <ul>
+          {% for player, points in weekly %}
+            <li>{{ player }} - {{ points }} points</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
