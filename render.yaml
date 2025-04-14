@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tic_tac_toe_app
+    env: python
+    rootDir: tic_tac_toe
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
