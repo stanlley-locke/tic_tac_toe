@@ -65,3 +65,4 @@ Werkzeug==2.2.3
 wheel==0.45.1
 wsproto==1.2.0
 WTForms==3.2.1
+gunicorn
